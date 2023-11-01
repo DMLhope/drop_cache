@@ -1,0 +1,22 @@
+## 为了减小内存中buff/cache的占用
+``` 
+#!/bin/bash
+echo "开始清除缓存"
+sync;sync;sync #写入硬盘，防止数据丢失
+sleep 10#延迟10秒
+echo 1 > /proc/sys/vm/drop_caches
+echo 2 > /proc/sys/vm/drop_caches
+echo 3 > /proc/sys/vm/drop_caches
+```
+## 写个定时任务
+crontab -e #弹出配置文件
+
+``` 
+#分　 时　 日　 月　 周　 命令
+0 */2 * * * ./cleanCache.sh 
+```
+
+## 查看服务(debian 12)
+systemctl status cron
+### 如果没有设置开机启动则可以设置下
+systemctl enable cron
