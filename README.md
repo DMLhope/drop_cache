@@ -20,3 +20,6 @@ crontab -e #弹出配置文件
 systemctl status cron
 ### 如果没有设置开机启动则可以设置下
 systemctl enable cron
+
+## 参考链接
+https://focusss.github.io/2019/02/10/Linux%E4%B8%ADbuff-cache%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E8%A7%A3%E5%86%B3%E6%89%8B%E6%AE%B5/
