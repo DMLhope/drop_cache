@@ -11,9 +11,10 @@ echo 3 > /proc/sys/vm/drop_caches
 ## 写个定时任务
 crontab -e #弹出配置文件
 
+[path]是脚本存放目录的绝对路径
 ``` 
 #分　 时　 日　 月　 周　 命令
-0 */2 * * * ./cleanCache.sh 
+0 */2 * * * [path]/drop_cache.sh 
 ```
 
 ## 查看服务(debian 12)
